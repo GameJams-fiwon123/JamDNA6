@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=4]
+
+[node name="Level1" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="." index="0"]
+
+editor/display_folded = true
+sort_enabled = true
+
+[node name="Player" parent="YSort" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -2.48053, -23.8908 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
+
+[node name="Camera2D" parent="YSort/Player" index="2" instance=ExtResource( 3 )]
+
+offset = Vector2( 0, -450 )
+limit_left = -960
+limit_right = 960
+limit_bottom = 480
+limit_smoothed = true
+smoothing_enabled = true
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "Smoothing", "Transform", "Visibility", "Z Index" ]
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+script = ExtResource( 4 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+
+
