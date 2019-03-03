@@ -26,37 +26,44 @@ _sections_unfolded = [ "Pause", "Scroll" ]
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1000, 1000 )
-_sections_unfolded = [ "Motion", "Transform" ]
+_sections_unfolded = [ "Material", "Motion", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer" index="0"]
 
+modulate = Color( 0.886719, 0.886719, 0.886719, 1 )
+scale = Vector2( 1, 1.08 )
 texture = ExtResource( 1 )
 centered = false
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="." index="1"]
 
 motion_scale = Vector2( 0.1, 0.1 )
-motion_offset = Vector2( 0, 0 )
+motion_offset = Vector2( 0, -5000 )
 motion_mirroring = Vector2( 1000, 1000 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer2" index="0"]
 
+modulate = Color( 0.769531, 0.769531, 0.769531, 1 )
+scale = Vector2( 1, 1.081 )
 texture = ExtResource( 2 )
 centered = false
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="." index="2"]
 
 motion_scale = Vector2( 0.5, 0.5 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1000, 1000 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer3" index="0"]
 
+scale = Vector2( 1, 1.078 )
 texture = ExtResource( 3 )
 centered = false
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="." index="3"]
 
@@ -67,18 +74,22 @@ _sections_unfolded = [ "Motion", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer4" index="0"]
 
+modulate = Color( 0.914063, 0.914063, 0.914063, 1 )
+scale = Vector2( 1, 1.082 )
 texture = ExtResource( 4 )
 centered = false
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="." index="4"]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( -500, 0 )
 motion_mirroring = Vector2( 0, 1000 )
-_sections_unfolded = [ "Motion", "Transform" ]
+_sections_unfolded = [ "Motion", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer5" index="0"]
 
+scale = Vector2( 1, 1.081 )
 texture = ExtResource( 5 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]

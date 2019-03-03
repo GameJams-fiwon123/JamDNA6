@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="JamDNA6"
-run/main_scene="res://Scenes/Level1.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -22,6 +22,9 @@ Global="*res://Scripts/Global.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/handheld/orientation="reverse_landscape"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -39,6 +42,7 @@ ui_right=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Pickups"
+2d_physics/layer_4="Enviroment"
 
 [rendering]
 

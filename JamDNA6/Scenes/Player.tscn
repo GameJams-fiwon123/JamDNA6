@@ -1,15 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://GFX/boneco_de_neve1.png" type="Texture" id=2]
-[ext_resource path="res://GFX/boneco_de_neve2.png" type="Texture" id=3]
-[ext_resource path="res://GFX/boneco_de_neve3.png" type="Texture" id=4]
-[ext_resource path="res://GFX/boneco_de_neve4.png" type="Texture" id=5]
+[ext_resource path="res://GFX/shadow.png" type="Texture" id=2]
+[ext_resource path="res://GFX/boneco_de_neve1.png" type="Texture" id=3]
+[ext_resource path="res://GFX/boneco_de_neve2.png" type="Texture" id=4]
+[ext_resource path="res://GFX/boneco_de_neve3.png" type="Texture" id=5]
+[ext_resource path="res://GFX/boneco_de_neve4.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -29,18 +30,26 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 2.27833, 8.97093 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 0.214645, 0 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Animation", "Offset" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 0.56958, 24.0649 )
+visible = false
+position = Vector2( 2.13593, 21.6442 )
 shape = SubResource( 2 )
 
 

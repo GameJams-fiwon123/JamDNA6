@@ -8,17 +8,11 @@ func is_left_click(ev):
 	
 	return false
 
-func _on_LabelStart_gui_input(ev):
+func _on_LabelYes_gui_input(ev):
 	if is_left_click(ev):
 		get_tree().change_scene(Global.Level1)
 
 
-
-func _on_LabelCredits_gui_input(ev):
+func _on_LabelNo_gui_input(ev):
 	if is_left_click(ev):
-		get_tree().change_scene(Global.Credits)
-
-
-func _on_LabelExit_gui_input(ev):
-	if is_left_click(ev):
-		get_tree().quit()
+		get_tree().change_scene(Global.MainMenu)

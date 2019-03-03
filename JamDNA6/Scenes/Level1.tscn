@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Timer.gd" type="Script" id=4]
+[ext_resource path="res://SFX/midi_export.wav" type="AudioStream" id=5]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="AtlasTexture" id=2]
+
+flags = 0
+region = Rect2( 0, 0, 0, 0 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="AtlasTexture" id=1]
+
+flags = 0
+region = Rect2( 0, 0, 0, 0 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[node name="Level1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -20,21 +35,64 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="Camera2D" parent="YSort/Player" index="2" instance=ExtResource( 3 )]
 
-offset = Vector2( 0, -450 )
+editor/display_folded = true
 limit_left = -960
 limit_right = 960
 limit_bottom = 480
 limit_smoothed = true
 smoothing_enabled = true
+editor_draw_limits = true
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "Smoothing", "Transform", "Visibility", "Z Index" ]
+
+[node name="LeftTouch" type="TouchScreenButton" parent="YSort/Player" index="3"]
+
+position = Vector2( -4319.96, -2888.93 )
+scale = Vector2( 4318.6, 4979.42 )
+normal = SubResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_left"
+visibility_mode = 0
+
+[node name="RightTouch" type="TouchScreenButton" parent="YSort/Player" index="4"]
+
+position = Vector2( 5.9234, -3179.24 )
+scale = Vector2( 4397.88, 5638.21 )
+normal = SubResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_right"
+visibility_mode = 0
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Timer" type="Timer" parent="." index="1"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 1.5
 one_shot = true
 autostart = true
 script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 5 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="YSort/Player/LeftTouch" to="YSort/Player" method="_on_LeftTouch_pressed"]
+
+[connection signal="pressed" from="YSort/Player/RightTouch" to="YSort/Player" method="_on_RightTouch_pressed"]
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 

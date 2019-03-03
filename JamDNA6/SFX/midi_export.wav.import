@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/midi_export.wav-e5e9534e284e38db6e0acbf98a9feac6.sample"
+
+[deps]
+
+source_file="res://SFX/midi_export.wav"
+dest_files=[ "res://.import/midi_export.wav-e5e9534e284e38db6e0acbf98a9feac6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=88200.0
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
